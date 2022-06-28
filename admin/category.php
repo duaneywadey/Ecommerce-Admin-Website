@@ -17,7 +17,7 @@ include('../middleware/adminMiddleware.php');
 					<h3>Categories</h3>
 				</div>
 				<div class="card-body">
-					<table class="table table-bordered">
+					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
 								<th>ID</th>
@@ -53,9 +53,14 @@ include('../middleware/adminMiddleware.php');
 
 
 									<td><?= $item['status'] == '0' ? "Visible": "Hidden" ?></td>
+
+
+									<!-- Edit a record from the table -->
 									<td>
-										<a href="#" class="btn btn-primary">Edit</a>
+										<a href="edit-category.php?id=<?= $item['id'];?>" class="btn btn-primary">Edit</a>
 									</td>
+
+
 								</tr>
 
 								<?php

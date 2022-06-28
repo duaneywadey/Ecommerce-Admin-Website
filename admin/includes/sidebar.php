@@ -23,6 +23,22 @@
                <span class="nav-link-text ms-1">Dashboard</span>
             </a>
          </li>
+          <li class="nav-item">
+            <a href="category.php" class="nav-link text-white <?php if(basename($_SERVER['PHP_SELF']) == "category.php") {
+
+               echo "active bg-gradient-primary"; 
+            }
+            else {
+               echo " ";
+            }
+            ?>" >
+               <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                  <i class="material-icons opacity-10">table_view</i>
+               </div>
+               <span class="nav-link-text ms-1">Categories</span>
+            </a>
+         </li>
+
          <li class="nav-item">
             <a href="add-category.php" class="nav-link text-white <?php if(basename($_SERVER['PHP_SELF']) == "add-category.php") {
 
@@ -38,21 +54,23 @@
                <span class="nav-link-text ms-1">Add Category</span>
             </a>
          </li>
-         <li class="nav-item">
-            <a href="category.php" class="nav-link text-white <?php if(basename($_SERVER['PHP_SELF']) == "category.php") {
+
+         <!-- <li class="nav-item">
+            <a href="edit-category.php" class="nav-link text-white <?php if(basename($_SERVER['PHP_SELF']) == "edit-category.php") {
 
                echo "active bg-gradient-primary"; 
             }
             else {
                echo " ";
             }
-            ?>" >
+            ?>">
                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                   <i class="material-icons opacity-10">table_view</i>
                </div>
-               <span class="nav-link-text ms-1">Categories</span>
+               <span class="nav-link-text ms-1">Edit Category</span>
             </a>
-         </li>
+         </li> -->
+
       </ul>
    </div>
    <div class="sidenav-footer position-absolute w-100 bottom-0 ">
