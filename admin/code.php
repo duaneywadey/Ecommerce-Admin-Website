@@ -39,7 +39,7 @@ if(isset($_POST['add_category_btn']))
 	}
 	else 
 	{
-		redirect("../index.php", "Something's wrong with the query. Please check");
+		redirect("../index.php", "Something's wrong with the query. Please check your inputs carefully");
 	}
 
 }
