@@ -24,7 +24,7 @@ include('../middleware/adminMiddleware.php');
 								<th>Name</th>
 								<th>Image</th>
 								<th>Status</th>
-								<th>Edit</th>
+								<th>Action</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -58,6 +58,13 @@ include('../middleware/adminMiddleware.php');
 									<!-- Edit a record from the table -->
 									<td>
 										<a href="edit-category.php?id=<?= $item['id'];?>" class="btn btn-primary">Edit</a>
+
+										<!-- Delete form -->
+										<form action="code.php" method="POST">
+											<input type="hidden" name="category_id" value="<?= $item['id'];?>">
+											<button type="submit" class="btn btn-danger" name="delete_category_btn">Delete</button>
+										</form>
+
 									</td>
 
 
