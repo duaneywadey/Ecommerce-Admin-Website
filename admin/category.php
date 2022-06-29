@@ -48,7 +48,7 @@ include('../middleware/adminMiddleware.php');
 									<td><?= $item['name'];?></td>
 
 									<td>
-										<img src="../uploads/<?= $item['image']; ?>" width="150px" height="150px" alt= "<?=item['name']; ?>">
+										<img src="../uploads/<?= $item['image']; ?>" width="150px" height="150px" alt= "<?= $item['name']; ?>">
 									</td>
 
 
