@@ -121,7 +121,7 @@ else if(isset($_POST['delete_category_btn']))
 	{
 		if(file_exists("../uploads/".$image))
 		{
-			unlink("../uploads".$image);
+		    unlink("../uploads/".$image);
 		}
 
 		redirect("category.php", "Category deleted");
@@ -132,4 +132,57 @@ else if(isset($_POST['delete_category_btn']))
 	}
 }
 
+else if(isset($_POST['add_product_btn']))
+{
+	$category_id = $_POST['category_id']; 
+
+	$name = $_POST['name'];
+	$slug = $_POST['slug'];
+	$small_description = $_POST['small_description'];
+	$description = $_POST['description'];
+	$original_price = $_POST['original_price'];
+	$selling_price = $_POST['selling_price'];
+	$qty = $_POST['qty'];
+	$meta_title = $_POST['meta_title'];
+	$meta_description = $_POST['meta_description'];
+	$meta_keywords = $_POST['meta_keywords'];
+	$status = isset($_POST['status']) ? '1':'0' ;
+	$trending = isset($_POST['trending']) ? '1':'0' ;	
+
+	// Variable for the image files
+	$image = $_FILES['image']['name'];
+
+	// Store to this folder
+	$path = "../uploads";
+
+	$image_ext = pathinfo($image, PATHINFO_EXTENSION);
+ 
+	$filename = time().'.'.$image_ext;
+
+	if($name != '' && $slug != '' &&description != '')
+	{
+		$product_query = "INSERT INTO products (category_id,name,slug,small_description,description,original_price,selling_price,qty,meta_title,meta_description,meta_keywords,status,trending,image)
+
+		VALUES('$category_id', '$name', '$slug', '$small_description', '$description', '$original_price', '$selling_price', '$qty', '$meta_title', '$meta_description', '$meta_keywords', '$status', '$trending', '$filename') ";
+
+		$product_query_run = mysqli_query($con, $product_query);
+
+		if($product_query_run)
+		{
+			move_uploaded_file($_FILES['image']['tmp_name'], $path.'/'.$filename);
+
+			redirect("add-product.php", "Category added successfully");	
+		}
+		else 
+		{
+			redirect("add-product.php", "Something went wrong to the query!");	
+		}
+
+	}
+
+	else 
+	{
+		redirect("add-product.php", "Something went wrong!");	
+	}
+}
 ?>

@@ -27,5 +27,14 @@ function redirect($url, $message)
 	exit();
 }
 
+function deleteDrFiles($path) {
+    if (is_dir($path)) {
+        array_map(function($value) {
+            $this->deleteDrFiles($value);
+            rmdir($value);
+        },glob($path . '/*', GLOB_ONLYDIR));
+        array_map('unlink', glob($path."/*"));
+    }
+}
 
 ?>

@@ -55,8 +55,8 @@
             </a>
          </li>
 
-         <!-- <li class="nav-item">
-            <a href="edit-category.php" class="nav-link text-white <?php if(basename($_SERVER['PHP_SELF']) == "edit-category.php") {
+           <li class="nav-item">
+            <a href="products.php" class="nav-link text-white <?php if(basename($_SERVER['PHP_SELF']) == "products.php") {
 
                echo "active bg-gradient-primary"; 
             }
@@ -67,9 +67,28 @@
                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                   <i class="material-icons opacity-10">table_view</i>
                </div>
-               <span class="nav-link-text ms-1">Edit Category</span>
+               <span class="nav-link-text ms-1">Products</span>
             </a>
-         </li> -->
+         </li>
+
+          <li class="nav-item">
+            <a href="add-product.php" class="nav-link text-white <?php if(basename($_SERVER['PHP_SELF']) == "add-product.php") {
+
+               echo "active bg-gradient-primary"; 
+            }
+            else {
+               echo " ";
+            }
+            ?>">
+               <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                  <i class="material-icons opacity-10">table_view</i>
+               </div>
+               <span class="nav-link-text ms-1">Add Product</span>
+            </a>
+         </li>
+
+
+         
 
       </ul>
    </div>
