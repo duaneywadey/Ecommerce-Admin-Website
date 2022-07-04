@@ -14,7 +14,7 @@ include('../middleware/adminMiddleware.php');
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
-					<h3>Categories</h3>
+					<h3>Products</h3>
 				</div>
 				<div class="card-body">
 					<table class="table table-bordered table-striped">
@@ -33,14 +33,14 @@ include('../middleware/adminMiddleware.php');
 
 							 // Display all records to a table
 
-							 $category = getAll('categories'); 
+							 $products = getAll('products'); 
 
-							 if(mysqli_num_rows($category) > 0)
+							 if(mysqli_num_rows($products) > 0)
 							 {
 
 							 	// Get each record using foreach loop
 
-							 	foreach($category as $item)
+							 	foreach($products as $item)
 							 	{
 							 		?>
 
@@ -58,14 +58,14 @@ include('../middleware/adminMiddleware.php');
 
 									<!-- Edit a record from the table -->
 									<td>
-										<a href="edit-category.php?id=<?= $item['id'];?>" class="btn btn-primary">Edit</a>
+										<a href="edit-product.php?id=<?= $item['id'];?>" class="btn btn-primary">Edit</a>
 									</td>
 
 									<td>
 										<!-- Delete form -->
 										<form action="code.php" method="POST">
 											<input type="hidden" name="category_id" value="<?= $item['id'];?>">
-											<button type="submit" class="btn btn-danger" name="delete_category_btn">Delete</button>
+											<button type="submit" class="btn btn-danger" name="delete_product_btn">Delete</button>
 										</form>
 
 									</td>
@@ -73,16 +73,17 @@ include('../middleware/adminMiddleware.php');
 
 								</tr>
 
-								<?php
+									<?php
 
-							 	}
-							 }
+								 	}
+								 }
 
-							 else
-							 {
-							 	echo "No records found";
-							 }
-							 ?>
+								 else
+								 {
+								 	echo "No records found";
+								 }
+
+								 ?>
 
 						</tbody>
 					</table>
