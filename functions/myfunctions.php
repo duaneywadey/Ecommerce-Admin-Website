@@ -1,7 +1,10 @@
 <?php
-
-# Create a function for redirecting user to a new page
-
+ 
+    
+ if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    }       
 include('../config/dbcon.php');
 
 function getAll($table)

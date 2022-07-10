@@ -16,7 +16,7 @@ include('../middleware/adminMiddleware.php');
 				<div class="card-header">
 					<h3>Products</h3>
 				</div>
-				<div class="card-body">
+				<div class="card-body" id="products_table">
 					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
@@ -61,13 +61,8 @@ include('../middleware/adminMiddleware.php');
 										<a href="edit-product.php?id=<?= $item['id'];?>" class="btn btn-primary">Edit</a>
 									</td>
 
-									<td>
-										<!-- Delete form -->
-										<form action="code.php" method="POST">
-											<input type="hidden" name="category_id" value="<?= $item['id'];?>">
-											<button type="submit" class="btn btn-danger" name="delete_product_btn">Delete</button>
-										</form>
-
+									<td>							
+										<button type="button" class="btn btn-danger delete_product_btn" value="<?= $item['id']; ?>">Delete</button>
 									</td>
 
 

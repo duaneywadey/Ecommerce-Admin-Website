@@ -28,7 +28,8 @@ include('../middleware/adminMiddleware.php');
 			?>
 					<div class="card">
 						<div class="card-header">
-							<h4>Edit Product </h4>
+							<h4>Edit Product</h4>
+							<a href="products.php" class="btn btn-primary float-end">Back</a>
 						</div>
 						<div class="card-body">
 							<form action="code.php" method="POST" enctype="multipart/form-data">
@@ -68,6 +69,7 @@ include('../middleware/adminMiddleware.php');
 
 										</select>
 									</div>
+									<input type="hidden" name="product_id" value="<?= $data['id']; ?>">
 									<div class="col-md-6">
 										<label for="">Name</label>
 										<input type="text" required name="name" value="<?= $data['name']; ?>" class="form-control mb-2" placeholder="Enter Category Name" >
@@ -94,7 +96,8 @@ include('../middleware/adminMiddleware.php');
 									</div>
 									<div class="col-md-12">
 										<label for="">Upload Image</label>
-										<input type="file" required name="image" class="form-control mb-2">
+										<input type="hidden" name="old_image" value="<?= $data['image']; ?>">
+										<input type="file" name="image" class="form-control mb-2">
 										<label for="" class="mb-0">Current Image</label>
 										<img src="../uploads/<?= $data['image']; ?>" alt="Product Image" height="50px" width="50px">
 									</div>
@@ -106,11 +109,11 @@ include('../middleware/adminMiddleware.php');
 										</div>
 										<div class="col-md-3 mt-5">
 											<label for="">Status</label>
-											<input type="checkbox"  name="status">
+											<input type="checkbox" name="status" <?= $data['status'] == '0' ? '' : 'checked'?>>
 										</div>
 										<div class="col-md-3 mt-5">
 											<label for="">Trending</label>
-											<input type="checkbox"  name="trending">	
+											<input type="checkbox"  name="trending" <?= $data['trending'] == '0' ? '': 'checked'?>>	
 										</div>
 									</div>
 
