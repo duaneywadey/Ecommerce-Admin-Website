@@ -11,7 +11,7 @@
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="categories.php">Collections</a>
         </li>
 
 
@@ -21,6 +21,7 @@
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa fa-user-circle-o" aria-hidden="true"></i>
               <?= $_SESSION['auth_user']['name']; ?>
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

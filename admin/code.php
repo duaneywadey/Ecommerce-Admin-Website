@@ -93,7 +93,7 @@ else if(isset($_POST['update_category_btn']))
 			}
 
 		}
-		redirect("edit-category.php?id=$category_id", "Category updated successfully!");
+		redirect("category.php", "Category updated successfully!");
 	}
 
 	else 
@@ -245,7 +245,7 @@ else if(isset($_POST['update_product_btn']))
 			}
 
 		}
-		redirect("edit-product.php?id=$product_id", "Product updated successfully!");
+		redirect("products.php", "Product updated successfully!");
 	}
 
 	else

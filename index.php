@@ -1,7 +1,7 @@
 
 <?php 
+session_start();
 
-session_start();  
 include('includes/header.php'); 
 
 ?>
@@ -16,8 +16,7 @@ include('includes/header.php');
 				  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>
 				<?php unset($_SESSION['message']); } ?>
-				<h1>Hello, world!</h1>
-				<button class="btn btn-primary">Testing</button>
+				<h1>Hello, <?= $_SESSION['auth_user']['name']; ?> <i class="fa fa-user-circle-o" aria-hidden="true"></i></h1>
 			</div>
 		</div>
 	</div>
