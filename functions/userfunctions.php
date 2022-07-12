@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 include('config/dbcon.php');
 
 function getAllActive($table)
@@ -21,7 +20,7 @@ function redirect($url, $message)
 function getSlugActive($table, $slug)
 {
 	global $con;
-	$query = "SELECT * FROM $table WHERE slug = '$slug' ";
+	$query = "SELECT * FROM $table WHERE slug = '$slug' AND status='0' LIMIT 1";
 	return $query_run = mysqli_query($con, $query);
 
 }
@@ -29,14 +28,14 @@ function getSlugActive($table, $slug)
 function getProdByCategory($category_id)
 {
 	global $con;
-	$query = "SELECT * FROM products WHERE category_id = '$category_id' ";
+	$query = "SELECT * FROM products WHERE category_id = '$category_id' AND status='0' ";
 	return $query_run = mysqli_query($con, $query);
 }
 
 function getIDActive($table, $id)
 {
 	global $con;
-	$query = "SELECT * FROM $table WHERE id = '$id'";
+	$query = "SELECT * FROM $table WHERE id = '$id' AND status='0' ";
 	return $query_run = mysqli_query($con, $query);
 
 }

@@ -83,11 +83,11 @@ include('../middleware/adminMiddleware.php');
 									<input type="number" required name="qty" class="form-control mb-2" placeholder="Enter Quantity">
 								</div>
 								<div class="col-md-3 mt-5">
-									<label for="">Status</label>
+									<label for="">Hidden</label>
 									<input type="checkbox"  name="status">
 								</div>
 								<div class="col-md-3 mt-5">
-									<label for="">Trending</label>
+									<label for="">Visible</label>
 									<input type="checkbox"  name="trending">	
 								</div>
 							</div>

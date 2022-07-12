@@ -1,7 +1,7 @@
 
 
 <?php 
-session_start(); 
+
 
 // If a user wants to log in but is already logged in
 

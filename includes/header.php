@@ -1,4 +1,6 @@
-
+<?php 
+session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -26,7 +28,7 @@
       }
     </style>
 
-    <title>Hello, world!</title>
+    <title>Ecommerce</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
