@@ -3,10 +3,6 @@
 include('../middleware/adminMiddleware.php');
 include('includes/header.php');
 
-
-
-
-
 ?>
 
 

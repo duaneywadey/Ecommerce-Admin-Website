@@ -22,12 +22,11 @@ include('includes/header.php');
 
 				<?php } else { ?>
 
-				<h1>Welcome to the E-commerce Homepage!</h1>
+				<h1>Welcome to the E-commerce!</h1>
 
 				<?php } ?>
 
-				<img src="https://cdn.pixabay.com/photo/2018/07/26/09/56/ecommerce-3563183_960_720.jpg" alt="">
-
+				<img src="https://cdn.pixabay.com/photo/2018/07/26/09/56/ecommerce-3563183_960_720.jpg" alt="Icon of the App" class="img-responsive" style="max-width: 100%">
 			</div>
 		</div>
 	</div>

@@ -12,6 +12,7 @@ session_start();
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
     <style> 
+
       .card-prods .read-more:hover{
           font-size: 14px;
       }

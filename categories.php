@@ -28,7 +28,13 @@ include('functions/userfunctions.php');
 
 					?>
 					<div class="col-md-3 mb-4 mt-4">
+
+						<!-- Get the slug equivalent of the category; 
+
+							$item == categories  -->
+
 						<a href="products.php?category=<?= $item['slug']; ?>">
+
 							<div class="card card-prods shadow p-3 mb-5 bg-white rounded">
 								<img class="card-img-top mx-auto" src="uploads/<?= $item['image']; ?>" alt="Card image cap" style="width: 80%; height:100%;">
 							    <div class="card-body">

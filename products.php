@@ -4,6 +4,9 @@
 include('includes/header.php'); 
 include('functions/userfunctions.php'); 
 
+if(isset($_GET['category']))
+{
+
 
 $category_slug = $_GET['category'];
 $category_data = getSlugActive("categories", $category_slug);
@@ -35,7 +38,7 @@ $cid = $category['id'];
 
 					?>
 					<div class="col-md-3 mb-4 mt-4">
-						<a href="#">
+						<a href="product-view.php?product=<?= $item['id']; ?>">
 							<div class="card card-prods shadow p-3 mb-5 bg-white rounded">
 								<img class="card-img-top mx-auto" src="uploads/<?= $item['image']; ?>" alt="Card image cap" style="width: 80%; height:100%;">
 							    <div class="card-body">
@@ -64,4 +67,16 @@ $cid = $category['id'];
 	</div>
 </div>
 
-<?php include('includes/footer.php'); ?>
+<?php
+
+}
+
+else
+{
+	echo "Something went wrong!";
+}
+
+include('includes/footer.php'); 
+
+
+?>

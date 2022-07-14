@@ -11,7 +11,11 @@ if(isset($_POST['add_category_btn']))
 	$meta_title = $_POST['meta_title'];
 	$meta_description = $_POST['meta_description'];
 	$meta_keywords = $_POST['meta_keywords'];
+
+	// If this is checked, set status=1; HIDDEN
 	$status = isset($_POST['status']) ? '1':'0' ;
+
+	// If this is checked set, set popular=1; VISIBLE
 	$popular = isset($_POST['popular']) ? '1':'0' ;
 
 	// Variable for the image files
@@ -148,7 +152,11 @@ else if(isset($_POST['add_product_btn']))
 	$meta_title = $_POST['meta_title'];
 	$meta_description = $_POST['meta_description'];
 	$meta_keywords = $_POST['meta_keywords'];
+
+	// If this is checked, set status=1; HIDDEN
 	$status = isset($_POST['status']) ? '1':'0' ;
+
+	// If this is checked, set trending=1; VISIBLE
 	$trending = isset($_POST['trending']) ? '1':'0' ;	
 
 	// Variable for the image files
