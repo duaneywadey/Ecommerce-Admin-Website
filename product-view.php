@@ -26,7 +26,7 @@ if(isset($_GET['product']))
 		</div>
 
 		<div class="bg-light py-4">
-			<div class="container">
+			<div class="container product_data mt-3">
 				<div class="row mt-4">
 					<div class="col-md-4">
 						<img src="uploads/<?= $product['image']; ?>" alt="Product Image" class="img-responsive w-100">
@@ -63,16 +63,24 @@ if(isset($_GET['product']))
 
 						<div class="row">
 							<div class="col-md-4">	
-								<input type="text"class="form-control">
+								<div class="input-group mb-3" style="width: 130px;">
+								  <div class="input-group-prepend">
+								    <button class="input-group-text decrement-btn">-</button>
+								  </div>
+								  <input type="text" class="form-control text-center input-qty bg-white" value="1">
+								  <div class="input-group-append">
+								    <button class="input-group-text increment-btn">+</button>
+								  </div>
+								</div>
 							</div>	
 						</div>
 
 						<div class="row mt-3">
 							<div class="col-md-6">
-								<button class="btn btn-primary"><i class="fa fa-shopping-cart me-2"></i>Add to cart</button>	
+								<button class="btn btn-primary px-4 addToCartBtn" value="<?= $product['id']; ?>"><i class="fa fa-shopping-cart me-2"></i>Add to cart</button>	
 							</div>
 							<div class="col-md-6">
-								<button class="btn btn-danger"><i class="fa fa-shopping-cart me-2"></i>Add to wishlist</button>	
+								<button class="btn btn-danger px-4"><i class="fa fa-heart me-2"></i>Add to wishlist</button>	
 							</div>	
 						</div>
 
