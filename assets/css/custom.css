@@ -2,6 +2,10 @@
 	font-family: 'Roboto', sans-serif;
 }
 
-a {
-	text-decoration: none;
+
+.text-white a:hover,
+.text-white a:active,
+.text-white a:visited
+{
+    color: white;
 }

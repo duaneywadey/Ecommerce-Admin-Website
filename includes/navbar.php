@@ -8,10 +8,42 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link  
+
+          <?php if(basename($_SERVER['PHP_SELF']) == "index.php") {
+
+               echo "active"; 
+            }
+            else {
+               echo " ";
+            }
+            ?>" aria-current="page" href="index.php">Home</a>
         </li>
+
          <li class="nav-item">
-          <a class="nav-link" href="categories.php">Collections</a>
+          <a class="nav-link 
+
+          <?php if(basename($_SERVER['PHP_SELF']) == "categories.php") {
+
+               echo "active"; 
+            }
+            else {
+               echo " ";
+            }
+            ?>" href="categories.php">Collections</a>
+        </li>
+
+         <li class="nav-item">
+          <a class="nav-link 
+
+          <?php if(basename($_SERVER['PHP_SELF']) == "cart.php") {
+
+               echo "active"; 
+            }
+            else {
+               echo " ";
+            }
+            ?>" href="cart.php">Cart</a>
         </li>
 
 
