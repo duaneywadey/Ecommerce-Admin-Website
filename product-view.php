@@ -67,7 +67,11 @@ if(isset($_GET['product']))
 								  <div class="input-group-prepend">
 								    <button class="input-group-text decrement-btn">-</button>
 								  </div>
+
+								  <!-- Stores quantity value -->
 								  <input type="text" class="form-control text-center input-qty bg-white" value="1">
+
+
 								  <div class="input-group-append">
 								    <button class="input-group-text increment-btn">+</button>
 								  </div>
@@ -77,7 +81,11 @@ if(isset($_GET['product']))
 
 						<div class="row mt-3">
 							<div class="col-md-6">
+
+								<!-- Stores product ID value -->
 								<button class="btn btn-primary px-4 addToCartBtn" value="<?= $product['id']; ?>"><i class="fa fa-shopping-cart me-2"></i>Add to cart</button>	
+								
+
 							</div>
 							<div class="col-md-6">
 								<button class="btn btn-danger px-4"><i class="fa fa-heart me-2"></i>Add to wishlist</button>	

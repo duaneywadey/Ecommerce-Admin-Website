@@ -45,15 +45,29 @@ $(document).ready(function(){
 			data: {
 				"prod_id": prod_id,
 				"prod_qty": qty,
+
+				// We'll use the 'scope' variable to perform a query to the database
 				"scope": "add"
 			}, 
-			dataType: "dataType",
 
 			success: function(response){
-				if(response == 401)
+				if(response == 201)
 				{
-					alert("Login to continue");
+					alertify.success('Product added to cart');
 				}
+
+				else if(response == 401)
+				{
+					alertify.success('Login to continue');
+				}
+				else if(response == 'Existing')
+				{
+					alertify.success('Product already in cart');
+				}
+				else if(response == 500)
+				{
+					alertify.success('Something went wrong!');
+				} 
 			}
 		});
 
