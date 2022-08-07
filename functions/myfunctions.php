@@ -38,6 +38,8 @@ function redirect($url, $message)
 	exit();
 }
 
+
+
 function deleteDrFiles($path) {
     if (is_dir($path)) {
         array_map(function($value) {

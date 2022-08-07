@@ -36,6 +36,7 @@ $(document).ready(function(){
 	$('.addToCartBtn').click(function(e){
 		e.preventDefault();
 
+		// Inside product_data, find input-qty class
 		var qty = $(this).closest('.product_data').find('.input-qty').val();
 		var prod_id = $(this).val();
 
