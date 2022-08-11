@@ -30,6 +30,7 @@ include('includes/header.php');
 				    <tr>
 				      <th scope="col">Product</th>
 				      <th scope="col">Description</th>
+					  <th scope="col">Selling Price</th>
 				      <th scope="col">Quantity</th>
 				      <th scope="col">Action</th>
 				    </tr>
@@ -41,6 +42,7 @@ include('includes/header.php');
 					<tr>
 						<td><img src="uploads/<?= $citem['image'] ?>" alt="" width="100" height="100"></td>
 						<td><?=$citem['name']?></td>
+						<td>₱ <?=$citem['selling_price']?></td>
 						<td>
 							<div class="input-group mb-3" style="width: 130px;">
 								<button class="input-group-text decrement-btn">-</button>
