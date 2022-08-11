@@ -65,15 +65,11 @@ if(isset($_GET['product']))
 							<div class="col-md-4">	
 								<div class="input-group mb-3" style="width: 130px;">
 								  <div class="input-group-prepend">
-								    <button class="input-group-text decrement-btn">-</button>
+								  	<button class="input-group-text decrement-btn">-</button>
 								  </div>
-
-								  <!-- Stores quantity value -->
 								  <input type="text" class="form-control text-center input-qty bg-white" value="1">
-
-
 								  <div class="input-group-append">
-								    <button class="input-group-text increment-btn">+</button>
+								  	<button class="input-group-text increment-btn">+</button>
 								  </div>
 								</div>
 							</div>	

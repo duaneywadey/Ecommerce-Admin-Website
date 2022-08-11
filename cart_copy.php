@@ -24,8 +24,7 @@ include('includes/header.php');
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="table-responsive">
-				<table class="table">
+				<table class="table table-striped">
 				  <thead>
 				    <tr>
 				      <th scope="col">Product</th>
@@ -53,7 +52,6 @@ include('includes/header.php');
 					<?php } ?>
 				  </tbody>
 				</table>
-			</div>
 			</div>	
 		</div>
 	</div>
