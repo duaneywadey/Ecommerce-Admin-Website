@@ -91,7 +91,7 @@ $(document).ready(function(){
 			}, 
 
 			success: function(response){
-				alert(response);
+				console.log(response);
 			}
 		});
 	});
