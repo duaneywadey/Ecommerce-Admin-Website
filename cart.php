@@ -25,37 +25,38 @@ include('includes/header.php');
 		<div class="row">
 			<div class="col-md-12">
 				<div class="table-responsive">
-				<table class="table">
-				  <thead>
-				    <tr>
-				      <th scope="col">Product</th>
-				      <th scope="col">Description</th>
-					  <th scope="col">Selling Price</th>
-				      <th scope="col">Quantity</th>
-				      <th scope="col">Action</th>
-				    </tr>
-				  </thead>
-				  <tbody>
-				  	<?php $items = getCartItems();
-					foreach ($items as $citem) {
-					?>
-					<tr>
-						<td><img src="uploads/<?= $citem['image'] ?>" alt="" width="100" height="100"></td>
-						<td><?=$citem['name']?></td>
-						<td>₱ <?=$citem['selling_price']?></td>
-						<td>
-							<div class="input-group mb-3" style="width: 130px;">
-								<button class="input-group-text decrement-btn">-</button>
-								<input type="text" class="form-control text-center input-qty bg-white" value="<?= $citem['prod_qty']?>">
-								<button class="input-group-text increment-btn">+</button>
-							</div>
-						</td>
-						<td><button class="btn btn-danger">Remove</button></td>
-					</tr>
-					<?php } ?>
-				  </tbody>
-				</table>
-			</div>
+					<table class="table">
+					  <thead>
+					    <tr>
+					      <th scope="col">Product</th>
+					      <th scope="col">Description</th>
+						  <th scope="col">Selling Price</th>
+					      <th scope="col">Quantity</th>
+					      <th scope="col">Action</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					  	<?php $items = getCartItems();
+						foreach ($items as $citem) {
+						?>
+						<tr>
+							<td><img src="uploads/<?= $citem['image'] ?>" alt="" width="100" height="100"></td>
+							<td><?=$citem['name']?></td>
+							<td>₱ <?=$citem['selling_price']?></td>
+							<td>
+								<div class="input-group mb-3 product_data" style="width: 130px;">
+									<input type="hidden" class="prodId" value="<?= $citem['prod_id'] ?>">
+									<button class="input-group-text decrement-btn updateQty">-</button>
+									<input type="text" class="form-control text-center input-qty bg-white" value="<?= $citem['prod_qty']?>">
+									<button class="input-group-text increment-btn updateQty">+</button>
+								</div>
+							</td>
+							<td><button class="btn btn-danger"><i class="fa fa-trash"></i> Remove</button></td>
+						</tr>
+						<?php } ?>
+					  </tbody>
+					</table>
+				</div>
 			</div>	
 		</div>
 	</div>

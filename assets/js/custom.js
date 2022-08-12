@@ -74,4 +74,27 @@ $(document).ready(function(){
 
 	});
 
+	$(document).on('click', '.updateQty', function() {
+
+		var qty = $(this).closest('.product_data').find('.input-qty').val();
+		var prod_id = $(this).closest('.product_data').find('.prodId').val();
+
+		$.ajax({
+			type: "POST",
+			url: "functions/handlecart.php",
+			data: {
+				"prod_id": prod_id,
+				"prod_qty": qty,
+
+				// We'll use the 'scope' variable to perform a query to the database
+				"scope": "update"
+			}, 
+
+			success: function(response){
+				alert(response);
+			}
+		});
+	});
+
+
 });
