@@ -1,8 +1,8 @@
 
 <?php
 include('functions/userfunctions.php');  
-include('includes/header.php'); 
-
+include('includes/header.php');
+include('authenticate.php');
 
 ?>
 
