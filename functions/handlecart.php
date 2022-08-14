@@ -109,6 +109,11 @@ if(isset($_SESSION['auth']))
 					echo "Something went wrong";
 				}
 
+				break;
+
+			default:
+				echo 500;
+
 		}
 	}
 }
