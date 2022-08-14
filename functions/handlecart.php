@@ -80,12 +80,35 @@ if(isset($_SESSION['auth']))
 
 				break;
 
+			case 'delete':
+				$cart_id = $_POST['cart_id'];
+
+				$user_id = $_SESSION['auth_user']['user_id'];
+				$chk_existing_cart = "SELECT * FROM carts WHERE id='$cart_id' AND user_id='$user_id' ";
+				$chk_existing_cart_run = mysqli_query($con, $chk_existing_cart);
 
 
+				if(mysqli_num_rows($chk_existing_cart_run) > 0)
+				{
+					$delete_query = "DELETE FROM carts WHERE id='$cart_id' ";
+					$delete_query_run = mysqli_query($con, $delete_query);
 
+					if($delete_query_run)
+					{
+						echo 200;
+					}
 
-			default:
-				echo 500;
+					else
+					{
+						echo 500;
+					}
+				}
+
+				else
+				{	
+					echo "Something went wrong";
+				}
+
 		}
 	}
 }

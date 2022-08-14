@@ -25,7 +25,7 @@ include('authenticate.php');
 		<div class="row">
 			<div class="col-md-12">
 				<div class="table-responsive">
-					<table class="table">
+					<table class="table" id="carts_table">
 					  <thead>
 					    <tr>
 					      <th scope="col">Product</th>
@@ -51,7 +51,7 @@ include('authenticate.php');
 									<button class="input-group-text increment-btn updateQty">+</button>
 								</div>
 							</td>
-							<td><button class="btn btn-danger"><i class="fa fa-trash"></i> Remove</button></td>
+							<td><button class="btn btn-danger deleteItem" value="<?= $citem['cid'] ?>"><i class="fa fa-trash"></i> Remove</button></td>
 						</tr>
 						<?php } ?>
 					  </tbody>

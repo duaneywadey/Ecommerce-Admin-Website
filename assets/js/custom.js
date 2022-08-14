@@ -96,5 +96,48 @@ $(document).ready(function(){
 		});
 	});
 
+	$(document).on('click', '.deleteItem', function() {
+		var cart_id = $(this).val();
+		// alert(cart_id);
+
+		swal({
+		  title: "Are you sure?",
+		  text: "Once deleted, you will not be able to recover!",
+		  icon: "warning",
+		  buttons: true,
+		  dangerMode: true,
+		})
+
+		.then((willDelete) => {
+		  if (willDelete) {
+		  	$.ajax({
+				method: "POST",
+				url: 'functions/handlecart.php',
+				data: {
+					"cart_id":cart_id,
+					"scope":'delete'
+				},
+
+			success: function (response) {
+				if(response == 200)
+				{
+					// alertify.success('Item deleted successfully');
+
+					swal("Good job!", "Product deleted successfully!", "success");	
+		  			$("#carts_table").load(location.href + " #carts_table");	
+				}
+				else
+				{
+					console.log(response);
+					swal("Error!", "Something went wrong!", "error");
+				}
+
+			}
+		  });
+		}
+
+		});
+	});
+
 
 });
