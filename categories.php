@@ -19,6 +19,9 @@ include('functions/userfunctions.php');
 				<hr>	
 				<div class="row">
 					<?php
+
+					// Get all available categories
+
 					$categories = getAllActive("categories");
 
 					if(mysqli_num_rows($categories) > 0)

@@ -57,6 +57,10 @@ include('authenticate.php');
 					  </tbody>
 					</table>
 				</div>
+
+				<div class="float-end">
+					<a href="checkout.php" class="btn btn-outline-primary"> <i class="fa fa-shopping-cart "></i> Proceed to checkout</a>
+				</div>
 			</div>	
 		</div>
 	</div>

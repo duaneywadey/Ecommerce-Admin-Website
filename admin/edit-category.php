@@ -83,11 +83,11 @@ include('../middleware/adminMiddleware.php');
 										<textarea rows="3" name="meta_keywords" class="form-control" placeholder="Enter Keywords"><?= $data['meta_keywords'] ?></textarea>
 									</div>
 									<div class="col-md-6">
-										<label for="">Status</label>
+										<label for="">Hidden</label>
 										<input type="checkbox" <?= $data['status'] ? "checked":"" ?>name="status">
 									</div>
 									<div class="col-md-6">
-										<label for="">Popular</label>
+										<label for="">Visible</label>
 										<input type="checkbox" <?= $data['popular'] ? "checked":"" ?> name="popular">
 									</div>
 									<div class="col-md-12">

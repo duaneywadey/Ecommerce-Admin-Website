@@ -7,8 +7,10 @@ include('functions/userfunctions.php');
 if(isset($_GET['category']))
 {
 
-
+// Get slug value of category
 $category_slug = $_GET['category'];
+
+
 $category_data = getSlugActive("categories", $category_slug);
 $category = mysqli_fetch_array($category_data);
 $cid = $category['id'];
