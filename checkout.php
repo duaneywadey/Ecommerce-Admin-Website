@@ -4,6 +4,8 @@ include('functions/userfunctions.php');
 include('includes/header.php');
 include('authenticate.php');
 
+$totalPrice = 0;
+
 ?>
 
 <div class="py-3 bg-primary">	
@@ -77,14 +79,14 @@ include('authenticate.php');
 												<td>₱ <?=$citem['selling_price']?></td>
 												<td><?= $citem['prod_qty']?></td>
 											</tr>
-											<?php } ?>
+											<?php 
+											$totalPrice += $citem['selling_price'] * $citem['prod_qty'];
+												} 		
+											?>
 										  </tbody>
 										</table>
 									</div>
-									<?php 
-									$totalPrice=0;
-									$totalPrice += $citem['selling_price'] * $citem['prod_qty']; 
-									?>
+
 									<h4>Total Price: <span class="float-end">₱<?= $totalPrice ?></span></h4>
 								</div>
 							</div>
