@@ -31,28 +31,29 @@ $totalPrice = 0;
 						<div class="col-md-8">
 							<h5 class="card-title">Basic Details</h5>
 							<hr>
-							<div class="row">
-								<div class="col-md-6 mb-3">
-									<label for="exampleInputEmail1">Name</label>
-								    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter your name">
+							<form action="functions/placeorder.php" method="POST">
+								<div class="row">
+									<div class="col-md-6 mb-3">
+										<label for="exampleInputEmail1">Name</label>
+									    <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Enter your name">
+									</div>
+									<div class="col-md-6 mb-3">
+										<label for="exampleInputEmail1">Email address</label>
+									    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email address">
+									</div>
+									<div class="col-md-6 mb-3">
+										<label for="exampleInputEmail1">Phone</label>
+									    <input type="text" name="phone" class="form-control" id="exampleInputEmail1" placeholder="Enter your phone number">
+									</div>
+									<div class="col-md-6 mb-3">
+										<label for="exampleInputEmail1">PIN Code</label>
+									    <input type="text" name="pincode" class="form-control" id="exampleInputEmail1" placeholder="Enter PIN code">
+									</div>
+									<div class="col-md-12">
+										<label for="exampleFormControlTextarea1">Address</label>
+										<textarea class="form-control" name="address" id="exampleFormControlTextarea1" rows="3" placeholder="Enter your complete address"></textarea>
+									</div>	
 								</div>
-								<div class="col-md-6 mb-3">
-									<label for="exampleInputEmail1">Email address</label>
-								    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email address">
-								</div>
-								<div class="col-md-6 mb-3">
-									<label for="exampleInputEmail1">Phone</label>
-								    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter your phone number">
-								</div>
-								<div class="col-md-6 mb-3">
-									<label for="exampleInputEmail1">PIN Code</label>
-								    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter PIN code">
-								</div>
-								<div class="col-md-12">
-									<label for="exampleFormControlTextarea1">Address</label>
-									<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter your complete address"></textarea>
-								</div>	
-							</div>
 						</div>
 						<div class="col-md-4">
 							<h5 class="card-title">Order Details</h5>
@@ -89,12 +90,11 @@ $totalPrice = 0;
 
 									<h4>Total Price: <span class="float-end">₱<?= $totalPrice ?></span></h4>
 								</div>
+								<button type="submit" name="placeOrderBtn" class="btn btn-primary w-100 mt-4">Confirm and place order </button>
+							</form>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="float-end mt-4">
-					<a href="checkout.php" class="btn btn-outline-primary"> <i class="fa fa-shopping-cart "></i> Proceed to checkout</a>
 				</div>
 			</div>	
 		</div>
