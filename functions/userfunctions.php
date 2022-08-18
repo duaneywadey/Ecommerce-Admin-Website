@@ -1,5 +1,4 @@
 <?php
-
 include('config/dbcon.php');
 
 function getAllActive($table)

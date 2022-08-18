@@ -34,19 +34,19 @@ $totalPrice = 0;
 							<form action="functions/placeorder.php" method="POST">
 								<div class="row">
 									<div class="col-md-6 mb-3">
-										<label for="exampleInputEmail1">Name</label>
+										<label>Name</label>
 									    <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Enter your name">
 									</div>
 									<div class="col-md-6 mb-3">
-										<label for="exampleInputEmail1">Email address</label>
+										<label>Email address</label>
 									    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email address">
 									</div>
 									<div class="col-md-6 mb-3">
-										<label for="exampleInputEmail1">Phone</label>
+										<label>Phone</label>
 									    <input type="text" name="phone" class="form-control" id="exampleInputEmail1" placeholder="Enter your phone number">
 									</div>
 									<div class="col-md-6 mb-3">
-										<label for="exampleInputEmail1">PIN Code</label>
+										<label>PIN Code</label>
 									    <input type="text" name="pincode" class="form-control" id="exampleInputEmail1" placeholder="Enter PIN code">
 									</div>
 									<div class="col-md-12">
