@@ -12,6 +12,9 @@ if(isset($_SESSION['auth']))
 		$phone = mysqli_real_escape_string($con, $_POST['phone']);
 		$pincode = mysqli_real_escape_string($con, $_POST['pincode']);
 		$address = mysqli_real_escape_string($con, $_POST['address']);
+		$payment_mode = mysqli_real_escape_string($con, $_POST['payment_mode']);
+		$payment_id = mysqli_real_escape_string($con, $_POST['payment_id']);
+
 
 		if($name == "" || $email == "" || $phone == "" || $pincode == "" || $address == "")
 		{
@@ -31,20 +34,20 @@ if(isset($_SESSION['auth']))
 												 
 		} 
 
-		echo $totalPrice;
-
 		$tracking_no = "ivanduane".rand(111,9999).substr($phone,2);
 		$user_id = $_SESSION['auth_user']['user_id'];
 
-		$insert_query = "INSERT INTO orders (tracking_no, user_id, name, email, phone, address, pincode	total_price, payment_mode, payment_id, status, comments, created_at) VALUES ('$tracking_no', '$user_id', '$name', '$email', '$phone', '$pincode', '$address') ";
+		$insert_query = "INSERT INTO orders (tracking_no, user_id, name, email, phone, address, pincode, total_price, payment_mode) VALUES ('$tracking_no', '$user_id', '$name', '$email', '$phone', '$address', '$pincode', '$totalPrice', '$payment_mode') ";
 
 		$insert_query_run = mysqli_query($con, $insert_query);
 
 		if($insert_query_run)
 		{
-			$order_id = mysql_insert_id($con);
+			$order_id = mysqli_insert_id($con);
 
-			foreach ($query_run as $citem) {
+			foreach ($query_run as $citem) 
+			{
+
 				$prod_id = $citem['prod_id'];
 				$prod_qty = $citem['prod_qty'];
 				$price = $citem['selling_price'];			
@@ -52,18 +55,23 @@ if(isset($_SESSION['auth']))
 				$insert_items_query_run = mysqli_query($con, $insert_items_query);
 			}
 
-			$_SESSION['message'] = "Order places successfully";
+			$_SESSION['message'] = "Order placed successfully";
 			header('Location: ../my-orders.php');
 			die();
 
 		}
 
+		// else
+		// {
+		// 	echo "Failed query";
+		// }
+
 	}
 
 }
 
-// else
-// {
-// 	header('Location: ../index.php');
-// }
+else
+{
+	header('Location: ../index.php');
+}
 ?>

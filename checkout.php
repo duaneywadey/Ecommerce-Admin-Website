@@ -87,7 +87,7 @@ $totalPrice = 0;
 										  </tbody>
 										</table>
 									</div>
-
+									<input type="hidden" name="payment_mode" value="COD">
 									<h4>Total Price: <span class="float-end">₱<?= $totalPrice ?></span></h4>
 								</div>
 								<button type="submit" name="placeOrderBtn" class="btn btn-primary w-100 mt-4">Confirm and place order </button>
