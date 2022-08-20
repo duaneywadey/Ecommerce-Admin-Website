@@ -41,6 +41,15 @@ function getCartItems()
 	return $query_run = mysqli_query($con, $query);
 }
 
+function getOrders()
+{
+	global $con;
+	$userID = $_SESSION['auth_user']['user_id'];
+	
+	$query = "SELECT * FROM orders WHERE user_id='$userID' ";
+	return $query_run = mysqli_query($con, $query);
+}
+
 function getIDActive($table, $id)
 {
 	global $con;
@@ -49,5 +58,7 @@ function getIDActive($table, $id)
 	return $query_run = mysqli_query($con, $query);
 
 }
+
+
 
 ?>

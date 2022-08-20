@@ -24,7 +24,26 @@ include('authenticate.php');
 <div class="py-5">
 	<div class="container">
 		<div class="row">
-			
+			<?php $orders = getOrders(); 
+			if(mysqli_num_rows($orders) > 0) {
+				foreach ($orders as $item) {
+
+				
+			?>
+
+			<p><?=$item['id']?></p>
+			<p><?=$item['tracking_no']?></p>
+			<p><?=$item['total_price']?></p>
+			<p><?=$item['created_at']?></p>
+			<p></p>
+
+			<?php 
+
+				} 
+
+			} 
+			?>
+
 		</div>
 	</div>
 </div>
