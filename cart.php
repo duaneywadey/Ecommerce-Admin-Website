@@ -38,7 +38,9 @@ include('authenticate.php');
 					  </thead>
 					  <tbody>
 					  	<?php $items = getCartItems();
-						foreach ($items as $citem) {
+
+					  	if(mysqli_num_rows($items) > 0) {
+							foreach ($items as $citem) {
 						?>
 						<tr>
 							<td><img src="uploads/<?= $citem['image'] ?>" alt="" width="100" height="100"></td>
@@ -54,18 +56,32 @@ include('authenticate.php');
 							</td>
 							<td><button class="btn btn-danger deleteItem" value="<?= $citem['cid'] ?>"><i class="fa fa-trash"></i> Remove</button></td>
 						</tr>
-						<?php } ?>
+						<?php 
+
+								} 
+							}
+
+						else
+						{
+
+						?>
 					  </tbody>
 					</table>
 				</div>
 
+				<h3>Add new items to your cart!</h3>
+				<img src="https://media0.giphy.com/media/1kTUdMFdPhmQBBt2Uu/giphy.gif" alt="">
+
+				<?php } ?>
 				<div class="float-end">
 					<a href="checkout.php" class="btn btn-outline-primary"> <i class="fa fa-shopping-cart "></i> Proceed to checkout</a>
-				</div>
-			</div>	
+				</div>	
+			</div>
 		</div>
 	</div>
 </div>
+
+
 
 
 

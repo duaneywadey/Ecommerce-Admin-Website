@@ -50,10 +50,15 @@ if(isset($_SESSION['auth']))
 
 				$prod_id = $citem['prod_id'];
 				$prod_qty = $citem['prod_qty'];
-				$price = $citem['selling_price'];			
-				$insert_items_query = "INSERT INTO order_items (order_id, prod_id, qty, price) VALUES ('$order_id', '$prod_id', '$qty', '$price') ";
+				$price = $citem['selling_price'];	
+
+						
+				$insert_items_query = "INSERT INTO order_items (order_id, prod_id, qty, price) VALUES ('$order_id', '$prod_id', '$prod_qty', '$price') ";
 				$insert_items_query_run = mysqli_query($con, $insert_items_query);
 			}
+
+			$deleteCartQuery = "DELETE FROM carts WHERE user_id='$userID' ";
+			$deleteCartQueryRun = mysqli_query($con, $deleteCartQuery);
 
 			$_SESSION['message'] = "Order placed successfully";
 			header('Location: ../my-orders.php');
