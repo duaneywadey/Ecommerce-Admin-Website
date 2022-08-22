@@ -46,6 +46,20 @@
             ?>" href="cart.php">Cart</a>
         </li>
 
+         <li class="nav-item">
+          <a class="nav-link 
+
+          <?php if(basename($_SERVER['PHP_SELF']) == "my-orders.php") {
+
+               echo "active"; 
+            }
+            else {
+               echo " ";
+            }
+            ?>" href="my-orders.php">My Orders</a>
+        </li>
+
+
 
         <!-- If user is logged in, show his name in dropdown link -->
 

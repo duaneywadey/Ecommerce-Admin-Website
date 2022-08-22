@@ -40,11 +40,11 @@ $cid = $category['id'];
 
 					?>
 					<div class="col-md-3 mb-4 mt-4">
-						<a href="product-view.php?product=<?= $item['id']; ?>">
+						<a href="product-view.php?product=<?= $item['id']; ?>" style="text-decoration: none;">
 							<div class="card card-prods shadow p-3 mb-5 bg-white rounded">
-								<img class="card-img-top mx-auto" src="uploads/<?= $item['image']; ?>" alt="Card image cap" style="width: 80%; height:100%;">
+								<img class="card-img-top mx-auto" src="uploads/<?= $item['image']; ?>" alt="Card image cap" style="width: 150px; height:150px;">
 							    <div class="card-body">
-								    <h5 class="card-title text-center"><?= $item['name']; ?></h5>
+								    <h5 class="card-title text-center" style="color: black;   "><?= $item['name']; ?></h5>
 							    </div>
 						  	</div>
 					  	</a>

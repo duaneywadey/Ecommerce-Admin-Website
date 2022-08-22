@@ -35,11 +35,11 @@ $totalPrice = 0;
 								<div class="row">
 									<div class="col-md-6 mb-3">
 										<label>Name</label>
-									    <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Enter your name">
+									    <input type="text" name="name" class="form-control" id="exampleInputEmail1" value="<?php echo $_SESSION['auth_user']['name']; ?>" placeholder="Enter your name">
 									</div>
 									<div class="col-md-6 mb-3">
 										<label>Email address</label>
-									    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email address">
+									    <input type="email" name="email" class="form-control" id="exampleInputEmail1" value="<?php echo $_SESSION['auth_user']['email']; ?>" aria-describedby="emailHelp" placeholder="Enter your email address">
 									</div>
 									<div class="col-md-6 mb-3">
 										<label>Phone</label>
@@ -91,6 +91,8 @@ $totalPrice = 0;
 									<h4>Total Price: <span class="float-end">₱<?= $totalPrice ?></span></h4>
 								</div>
 								<button type="submit" name="placeOrderBtn" class="btn btn-primary w-100 mt-4">Confirm and place order </button>
+
+
 							</form>
 							</div>
 						</div>

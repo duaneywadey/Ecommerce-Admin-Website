@@ -27,21 +27,29 @@ include('authenticate.php');
 			<?php $orders = getOrders(); 
 			if(mysqli_num_rows($orders) > 0) {
 				foreach ($orders as $item) {
-
-				
 			?>
 
-			<p><?=$item['id']?></p>
-			<p><?=$item['tracking_no']?></p>
-			<p><?=$item['total_price']?></p>
-			<p><?=$item['created_at']?></p>
-			<p></p>
-
+			<div class="col-md-3 mb-4">
+				<div class="card">
+					<div class="card-body">
+						<img src="https://w7.pngwing.com/pngs/311/42/png-transparent-freight-transport-computer-icons-car-ship-shipping-angle-logo-cargo.png" width="250" height="250" alt="">
+						<p><?=$item['id']?></p>
+						<p><?=$item['tracking_no']?></p>
+						<p><?=$item['total_price']?></p>
+						<p><?=$item['created_at']?></p>
+					</div>
+				</div>
+			</div>
 			<?php 
 
 				} 
 
 			} 
+
+			else 
+			{
+				echo "<p>No data available</p>";
+			}
 			?>
 
 		</div>

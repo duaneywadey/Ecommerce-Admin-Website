@@ -69,13 +69,39 @@ include('authenticate.php');
 					</table>
 				</div>
 
-				<h3>Add new items to your cart!</h3>
-				<img src="https://media0.giphy.com/media/1kTUdMFdPhmQBBt2Uu/giphy.gif" alt="">
+				<div class="d-flex justify-content-center">
+					<h3>Add new items to your cart!</h3>
+				</div>
+
+				<div class="d-flex justify-content-center">
+					<img src="https://media0.giphy.com/media/1kTUdMFdPhmQBBt2Uu/giphy.gif" alt="" style="border-radius: 8px;">				
+				</div>
+
 
 				<?php } ?>
+
+				<?php $items = getCartItems();
+
+			  	if(mysqli_num_rows($items) <= 0) {
+					
+				?>
 				<div class="float-end">
-					<a href="checkout.php" class="btn btn-outline-primary"> <i class="fa fa-shopping-cart "></i> Proceed to checkout</a>
-				</div>	
+					<a href="checkout.php" class="btn btn-outline-primary" style="<?php echo 'display: none'; ?>">
+					<i class="fa fa-shopping-cart "></i> Proceed to checkout</a>
+				</div>
+
+				<?php } 
+				else
+				{
+				?>
+				<div class="float-end">
+					<a href="checkout.php" class="btn btn-outline-primary">
+					<i class="fa fa-shopping-cart "></i> Proceed to checkout</a>
+				</div>
+
+				<?php } ?>
+
+
 			</div>
 		</div>
 	</div>
