@@ -34,7 +34,7 @@ $data = mysqli_fetch_array($orderData);
 			Home / 
 			</a>
 			<a href="my-orders.php" class="text-white" style="text-decoration: none;">
-			My Orders
+			My Orders / 
 			</a>
 			<a href="my-orders.php" class="text-white" style="text-decoration: none;">
 			View Orders
@@ -54,8 +54,38 @@ $data = mysqli_fetch_array($orderData);
 					<div class="card-body">
 						<div class="row">
 							<div class="col-md-6">
-								<div class="border p-1">
-									<?= $data['name']; ?>
+								<h3>Delivery Details</h3>
+								<div class="row">
+									<div class="col-md-12 mb-4">
+										<label class="fw-bold">Name</label>
+										<div class="border p-1">
+										<?= $data['name']; ?>
+										</div>	
+									</div>
+									<div class="col-md-12 mb-4">
+										<label class="fw-bold">Email</label>
+										<div class="border p-1">
+										<?= $data['email']; ?>
+										</div>	
+									</div>
+									<div class="col-md-12 mb-4">
+										<label class="fw-bold">Phone</label>
+										<div class="border p-1">
+										<?= $data['phone']; ?>
+										</div>	
+									</div>
+									<div class="col-md-12 mb-4">
+										<label class="fw-bold">Tracking No.</label>
+										<div class="border p-1">
+										<?= $data['tracking_no']; ?>
+										</div>	
+									</div>
+									<div class="col-md-12 mb-4">
+										<label class="fw-bold">PIN Code</label>
+										<div class="border p-1">
+										<?= $data['pincode']; ?>
+										</div>	
+									</div>
 								</div>
 							</div>
 						</div>
