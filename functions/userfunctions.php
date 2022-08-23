@@ -46,7 +46,7 @@ function getOrders()
 	global $con;
 	$userID = $_SESSION['auth_user']['user_id'];
 	
-	$query = "SELECT * FROM orders WHERE user_id='$userID' ";
+	$query = "SELECT * FROM orders WHERE user_id='$userID' ORDER BY id DESC";
 	return $query_run = mysqli_query($con, $query);
 }
 
@@ -57,6 +57,14 @@ function getIDActive($table, $id)
 	$query = "SELECT * FROM $table WHERE id = '$id' ";
 	return $query_run = mysqli_query($con, $query);
 
+}
+
+function checkTrackingNoValid($tracking_no)
+{
+	global $con;
+	$userID = $_SESSION['auth_user']['user_id'];
+	$query = "SELECT * FROM orders WHERE tracking_no='$tracking_no' AND user_id = '$userID' ";
+	return mysqli_query($con, $query);
 }
 
 
