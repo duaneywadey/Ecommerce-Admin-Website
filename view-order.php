@@ -55,6 +55,7 @@ $data = mysqli_fetch_array($orderData);
 						<div class="row">
 							<div class="col-md-6">
 								<h3>Delivery Details</h3>
+								<hr>
 								<div class="row">
 									<div class="col-md-12 mb-4">
 										<label class="fw-bold">Name</label>
@@ -86,6 +87,52 @@ $data = mysqli_fetch_array($orderData);
 										<?= $data['pincode']; ?>
 										</div>	
 									</div>
+									<div class="col-md-12 mb-4">
+										<label class="fw-bold">Date Added</label>
+										<div class="border p-1">
+										<?= $data['created_at']; ?>
+										</div>	
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<h3>Order Details</h3>
+								<hr>
+								<div class="table-responsive">
+									<table class="table">
+										<thead>
+										    <tr>
+										      <th scope="col">Product</th>
+											  <th scope="col">Selling Price</th>
+										      <th scope="col">Quantity</th>
+										    </tr>
+										</thead>
+										<tbody>
+										<?php
+										$userID = $_SESSION['auth_user']['user_id'];
+										$order_query = "SELECT o.id as oid, o.tracking_no, o.user_id, oi.*, p.* FROM orders o, order_items oi, products p WHERE o.user_id='$userID' AND oi.order_id=o.id AND p.id=oi.prod_id AND o.tracking_no='$tracking_no' ";
+										$order_query_run = mysqli_query($con, $order_query);
+
+										if(mysqli_num_rows($order_query_run) > 0)
+										{
+											foreach ($order_query_run as $item) {
+										?>
+											<tr>
+												<td><img src="uploads/<?= $item['image']; ?>" alt="<?= $item['name']; ?>" width="100" height="100"></td>
+												<td><?= $item['price']; ?></td>
+												<td><?= $item['qty']; ?></td>
+											</tr>
+										<?php
+
+											}
+										}
+										else
+										{
+											echo "no data";
+										}
+										?> 
+										</tbody>
+									</table>
 								</div>
 							</div>
 						</div>
