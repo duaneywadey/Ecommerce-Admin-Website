@@ -110,7 +110,7 @@ $data = mysqli_fetch_array($orderData);
 										<tbody>
 										<?php
 										$userID = $_SESSION['auth_user']['user_id'];
-										$order_query = "SELECT o.id as oid, o.tracking_no, o.user_id, oi.*, p.* FROM orders o, order_items oi, products p WHERE o.user_id='$userID' AND oi.order_id=o.id AND p.id=oi.prod_id AND o.tracking_no='$tracking_no' ";
+										$order_query = "SELECT o.id as oid, o.tracking_no, o.user_id, oi.*, oi.qty as orderqty, p.* FROM orders o, order_items oi, products p WHERE o.user_id='$userID' AND oi.order_id=o.id AND p.id=oi.prod_id AND o.tracking_no='$tracking_no' ";
 										$order_query_run = mysqli_query($con, $order_query);
 
 										if(mysqli_num_rows($order_query_run) > 0)
@@ -120,7 +120,7 @@ $data = mysqli_fetch_array($orderData);
 											<tr>
 												<td><img src="uploads/<?= $item['image']; ?>" alt="<?= $item['name']; ?>" width="100" height="100"></td>
 												<td><?= $item['price']; ?></td>
-												<td><?= $item['qty']; ?></td>
+												<td><?= $item['orderqty']; ?></td>
 											</tr>
 										<?php
 
@@ -133,6 +133,8 @@ $data = mysqli_fetch_array($orderData);
 										?> 
 										</tbody>
 									</table>
+									<hr>
+									<h4>Total price: <span class="float-end"><?= $data['total_price']; ?></span></h4>
 								</div>
 							</div>
 						</div>
